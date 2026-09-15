@@ -58,6 +58,7 @@ def _resolve_dataset_root(project_root: Path) -> Path:
         project_root / "data" / "casting_data" / "casting_data",
         project_root / "data" / "CastingProductImageData",
         project_root / "data" / "castings_data",
+        project_root / "data" / "sample_images" / "casting_512x512",
     ]
 
     existing = _choose_existing_path(candidates)
@@ -72,10 +73,17 @@ def build_default_config(project_root: Path) -> ProjectConfig:
     """Cria configuração padrão baseada na estrutura esperada do projeto."""
     dataset_root: Path = _resolve_dataset_root(project_root)
 
+    train_dir: Path = dataset_root / "train"
+    test_dir: Path = dataset_root / "test"
+    if not train_dir.exists() and (dataset_root / "ok_front").exists() and (dataset_root / "def_front").exists():
+        # Alguns recortes do dataset vêm sem subpastas train/test.
+        train_dir = dataset_root
+        test_dir = dataset_root
+
     paths = PathsConfig(
         dataset_root=dataset_root,
-        train_dir=dataset_root / "train",
-        test_dir=dataset_root / "test",
+        train_dir=train_dir,
+        test_dir=test_dir,
         output_root=project_root / "outputs",
         exploratory_output_dir=project_root / "outputs" / "exploratory",
         plots_output_dir=project_root / "outputs" / "plots",

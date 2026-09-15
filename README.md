@@ -22,9 +22,10 @@ Além da classificação, o projeto demonstra visualmente como técnicas clássi
 ├── mypy.ini
 ├── README.md
 ├── data/
-│   └── casting_data/                 # dataset extraído (não versionado)
-│       ├── train/
-│       └── test/
+│   ├── casting_data/                 # formato completo (train/test)
+│   │   ├── train/
+│   │   └── test/
+│   └── sample_images/casting_512x512 # formato reduzido (ok_front/def_front)
 ├── outputs/
 │   ├── exploratory/                  # imagens intermediárias do OpenCV
 │   └── plots/                        # curvas de loss/acurácia
@@ -76,7 +77,11 @@ pip install -r requirements.txt
 
 ### 4. Baixar e extrair dataset
 
-Siga `scripts/download_dataset_instructions.txt` e garanta a estrutura:
+Siga `scripts/download_dataset_instructions.txt`.
+
+O código aceita automaticamente **dois formatos**:
+
+**Formato A (completo):**
 
 ```text
 data/casting_data/train/ok_front
@@ -84,6 +89,15 @@ data/casting_data/train/def_front
 data/casting_data/test/ok_front
 data/casting_data/test/def_front
 ```
+
+**Formato B (recorte sem train/test):**
+
+```text
+data/sample_images/casting_512x512/ok_front
+data/sample_images/casting_512x512/def_front
+```
+
+No formato B, o pipeline usa a própria pasta como base de treino/validação.
 
 ### 5. Rodar pipeline completo
 
