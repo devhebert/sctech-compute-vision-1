@@ -1,0 +1,14 @@
+1) Acesse o link do dataset:
+   https://drive.google.com/file/d/1NZOjCHDRrpn7PmbFKVqegUP5arfdXHKK/view?usp=sharing
+
+2) Baixe e extraia o conteúdo para:
+   data/casting_data/
+
+3) Estrutura esperada:
+   data/casting_data/
+     train/
+       ok_front/
+       def_front/
+     test/
+       ok_front/
+       def_front/
