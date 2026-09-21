@@ -131,19 +131,3 @@ Para checar tipagem:
 ```bash
 mypy src main.py
 ```
-
-## Mapeamento para as Sprints da atividade
-
-- **Sprint 1**: estrutura do projeto, versionamento e instruções do dataset.
-- **Sprint 2**: grayscale + blur (`exploratory.py`).
-- **Sprint 3**: threshold + Canny + morfologia (`exploratory.py`).
-- **Sprint 4**: ingestão em lote + augmentation (`training.py`).
-- **Sprint 5**: arquitetura CNN com Conv2D/MaxPooling2D + Flatten + Dense (`training.py`).
-- **Sprint 6**: gráfico de loss/acurácia + documentação final (`training.py` + `README.md`).
-
-## Roteiro sugerido para o vídeo (até 5 min)
-
-1. Mostrar objetivo do sistema e execução do `python main.py`.
-2. Explicar o que Canny/Blur/Threshold/Morfologia evidenciaram nas saídas de `outputs/exploratory/`.
-3. Mostrar arquitetura CNN e bloco de Data Augmentation.
-4. Interpretar `training_curves.png` e comentar possível overfitting/treino saudável.
