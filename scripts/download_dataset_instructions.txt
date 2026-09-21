@@ -2,10 +2,10 @@
    https://drive.google.com/file/d/1NZOjCHDRrpn7PmbFKVqegUP5arfdXHKK/view?usp=sharing
 
 2) Baixe e extraia o conteúdo para:
-   data/casting_data/
+   data/sample_images/casting_512x512/
 
 3) Estrutura esperada:
-   data/casting_data/
+   data/sample_images/casting_512x512/
      train/
        ok_front/
        def_front/
