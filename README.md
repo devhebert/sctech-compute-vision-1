@@ -58,7 +58,7 @@ Além da classificação, o projeto demonstra visualmente como técnicas clássi
 ### 1. Clonar repositório
 
 ```bash
-git clone <url-do-seu-repo>
+git clone https://github.com/devhebert/sctech-compute-vision-1
 cd sctech-compute-vision-1
 ```
 
